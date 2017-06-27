@@ -1,6 +1,12 @@
-# QuotesApp
+# Learning Goals
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+1. Understand the Angular routing library.
+2. Add multiple pages to your single page application.
+3. Pass optional parameter between pages.
+4. Add child routes.
+5. Make pages interact with parameters and services.
+6. Understand services.
+7. Use Angular Dependency Injection to share services across the application.
 
 ## Development server
 
