@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { QuoteItemComponent } from './quote-item/quote-item.component';
@@ -16,6 +17,7 @@ import { CounterService } from './services/counter.service';
 import { ContactService } from './services/contact.service';
 import { ContactOverviewComponent } from './contact-overview/contact-overview.component';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { JokesComponent } from './jokes/jokes/jokes.component';
 
 
 // Routing Table:
@@ -33,14 +35,15 @@ const routes: Routes = [
   { path: 'home',        component: MyHomeComponent },
   { path: 'about',       component: MyAboutComponent },
   { path: 'quotes',      component: QuoteListComponent },
-  { path: 'quote/:id',   component: QuoteListComponent },
+  { path: 'quote/:id',   component: QuoteComponent },
   { path: 'contacts',    component: ContactListComponent },
   { path: 'contact/:id', component: ContactComponent,
     children: [
       { path: '',     component: ContactOverviewComponent }, //<-- the ContactOverviewComponent component as default
       { path: 'edit', component: ContactEditComponent }      //<-- the ContactEditComponent component for edit path
     ] 
-  }
+  },
+  { path: 'jokes',    component: JokesComponent },
 ];
 
 @NgModule({
@@ -56,11 +59,13 @@ const routes: Routes = [
     MyCounterComponent,
     ContactOverviewComponent,
     ContactEditComponent,
+    JokesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)  //  <-- "routes" is the array defined above
+    RouterModule.forRoot(routes),  //  <-- "routes" is the array defined above
+    HttpModule           // <!-- Angular's HTTP module
   ],
   /*
     we may want to share a service instance across the whole application. How can we do that?

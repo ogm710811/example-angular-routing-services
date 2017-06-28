@@ -2,4 +2,4 @@
 <small> {{ quote.author }} </small>
 <button type="button" class="btn btn-danger" (click)="onQuoteDelete()"> Delete </button>
 <button type="button" class="btn btn-info" (click)="viewDetails(quote.id)"> details (btn)  </button>
-<a [routerLink]="['quote', quote.id]"> details (link) </a>
+<a [routerLink]="['/quote', quote.id]"> details (link) </a> 
